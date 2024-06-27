@@ -1,6 +1,12 @@
+import java.util.Locale;
+import java.util.Scanner;
+
 public class Usuario {
 
     public static void main (String [] args) throws Exception{
+
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+
         SmartTv smartTv = new SmartTv();
 
         System.out.println("Is the SmartTV on: " + smartTv.on);
@@ -30,7 +36,9 @@ public class Usuario {
 
         System.out.println("----------------------");
 
-        smartTv.changeToSpecifChannel(30);
+        System.out.println("Type the channel you want to move to: ");
+        int newChannel = scanner.nextInt();
+        smartTv.changeToSpecifChannel(newChannel);
 
         System.out.println("What is the SmartTV Channel: " + smartTv.channel);
 
